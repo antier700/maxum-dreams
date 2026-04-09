@@ -1,0 +1,233 @@
+@use "../../../assets/theme/_var.scss" as *;
+
+.app-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  background: var(--white);
+  border-right: 1px solid var(--borderclr);
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition), transform var(--transition);
+  z-index: 1000;
+  overflow: hidden;
+
+  &.collapsed {
+    width: 80px;
+
+    .app-sidebar__logo-text {
+      opacity: 0;
+      width: 0;
+    }
+
+    .app-sidebar__label,
+    .app-sidebar__badge {
+      opacity: 0;
+      width: 0;
+    }
+
+    .app-sidebar__help {
+      opacity: 0;
+      height: 0;
+      padding: 0;
+    }
+  }
+
+  &__header {
+    padding: var(--space-lg) var(--space-md);
+    border-bottom: 1px solid var(--borderclr);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  &__logo-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__logo-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--textdark);
+    white-space: nowrap;
+    transition: opacity var(--transition), width var(--transition);
+  }
+
+  &__toggle {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--borderclr);
+    background: var(--cardbg);
+    color: var(--textdark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    flex-shrink: 0;
+
+    &:hover {
+      background: var(--primaryclr-alpha-10);
+      border-color: var(--primaryclr);
+      color: var(--primaryclr);
+    }
+  }
+
+  &__nav {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--space-md) 0;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--scrollbarclr);
+      border-radius: 2px;
+    }
+  }
+
+  &__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__menu-item {
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    margin: 0 var(--space-sm);
+    border-radius: var(--radius-md);
+    color: var(--textmuted);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    position: relative;
+    white-space: nowrap;
+
+    &:hover {
+      background: var(--primaryclr-alpha-10);
+      color: var(--textdark);
+    }
+
+    &.active {
+      background: var(--primaryclr);
+      color: #ffffff;
+      font-weight: 600;
+
+      .app-sidebar__icon {
+        transform: scale(1.1);
+      }
+
+      .app-sidebar__badge {
+        background: rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+    transition: transform var(--transition-fast);
+  }
+
+  &__label {
+    flex: 1;
+    transition: opacity var(--transition), width var(--transition);
+  }
+
+  &__badge {
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    background: var(--primaryclr-alpha-10);
+    color: var(--primaryclr);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: opacity var(--transition), width var(--transition);
+  }
+
+  &__footer {
+    padding: var(--space-md);
+    border-top: 1px solid var(--borderclr);
+    margin-top: auto;
+  }
+
+  &__help {
+    display: flex;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--cardbg);
+    border-radius: var(--radius-md);
+    transition: opacity var(--transition), height var(--transition), padding var(--transition);
+  }
+
+  &__help-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  &__help-content {
+    h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--textdark);
+      margin: 0 0 4px 0;
+    }
+
+    p {
+      font-size: 0.75rem;
+      color: var(--textmuted);
+      margin: 0;
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 991px) {
+  .app-sidebar {
+    transform: translateX(-100%);
+
+    &.mobile-open {
+      transform: translateX(0);
+    }
+  }
+}

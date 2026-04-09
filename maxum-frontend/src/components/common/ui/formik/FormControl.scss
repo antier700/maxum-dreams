@@ -1,0 +1,208 @@
+@use "../../../../assets/theme/_var.scss" as *;
+
+.input_group {
+  & {
+    padding-bottom: 1.25rem;
+  }
+
+  .form {
+    &-control {
+      background-image: none;
+      border: 1px solid var(--borderlight);
+      background: transparent;
+      background-color: transparent;
+      font-size: 1rem;
+      font-weight: 400;
+      width: 100%;
+      caret-color: var(--white);
+      height: 3.125rem;
+      color: var(--white);
+      border-radius: 0.75rem;
+      padding: 0.6rem 1rem;
+      transition: all var(--transition-fast);
+
+      &:-webkit-autofill::first-line,
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active {
+        -webkit-text-fill-color: var(--white) !important;
+        color: var(--white) !important;
+        font-size: 1rem !important;
+        caret-color: var(--white);
+        border-color: var(--borderlight);
+        -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+        box-shadow: 0 0 0px 1000px transparent inset !important;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
+      &::placeholder {
+        color: var(--textclr);
+        caret-color: var(--textclr);
+        font-size: 1rem;
+      }
+
+      &:-moz-placeholder {
+        opacity: 1;
+        color: var(--textclr);
+        caret-color: var(--textclr);
+        font-size: 1rem;
+      }
+
+      &::-webkit-input-placeholder {
+        opacity: 1;
+        color: var(--textclr);
+        caret-color: var(--textclr);
+        font-size: 1rem;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &[type="number"] {
+        -moz-appearance: textfield;
+      }
+
+      &:focus {
+        border-color: var(--primaryclr);
+        box-shadow: 0 0 0 3px var(--primaryclr-alpha-10);
+        background: transparent;
+        background-color: transparent;
+        color: var(--white);
+        outline: none;
+      }
+
+      &.is-invalid {
+        border-color: var(--red);
+        background-image: none;
+      }
+
+      &.disabled,
+      &:disabled {
+        background-color: var(--surfacebg);
+        opacity: 0.6;
+        pointer-events: none;
+        cursor: not-allowed;
+      }
+    }
+
+    &-label {
+      color: var(--textdark);
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.625rem;
+
+      sup {
+        color: var(--red);
+      }
+    }
+
+    &-check {
+      &-label {
+        color: var(--primaryclr);
+        font-size: 0.875rem;
+        font-weight: normal;
+
+        span {
+          color: var(--textclr);
+        }
+      }
+    }
+  }
+
+  textarea.form-control {
+    height: 6.25rem;
+    border-radius: 0.5rem;
+  }
+
+  &_inner {
+    position: relative;
+
+    &.rightpadding {
+      .form-control {
+        padding-right: 4.375rem;
+
+        @media (max-width: 575px) {
+          padding-right: 3.75rem;
+        }
+      }
+    }
+
+    &_righttext {
+      position: absolute;
+      right: 1.25rem;
+      display: flex;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+
+      @media (max-width: 1679px) {
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  &_passbtn {
+    position: absolute;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    top: 50%;
+    z-index: 1;
+  }
+
+  &_btm_title {
+    display: block;
+    padding-top: 0.3125rem;
+    font-size: 0.875rem;
+    color: var(--textclr);
+  }
+
+  &_inner {
+    position: relative;
+  }
+
+  &_passbtn {
+    position: absolute;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    top: 50%;
+    z-index: 1;
+  }
+
+  &_btm_title {
+    display: block;
+    padding-top: 0.3125rem;
+    font-size: 0.875rem;
+
+    span,
+    a,
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  &.passfield {
+    .input_group {
+      &_inner {
+        .form {
+          &-control {
+            padding-right: 3.125rem;
+          }
+        }
+      }
+    }
+  }
+
+  .error_text {
+    color: var(--red);
+    font-size: 1rem;
+    margin-top: 0.3125rem;
+  }
+}

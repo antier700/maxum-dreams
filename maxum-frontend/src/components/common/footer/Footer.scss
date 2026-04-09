@@ -1,0 +1,55 @@
+@use "../../../assets/theme/_var.scss" as *;
+
+.siteFooter {
+  margin-top: auto;
+
+  &_copyRightFooter {
+    background-color: var(--surfacebg);
+    padding: 0.9375rem 0;
+    text-align: center;
+    color: var(--textclr);
+    font-size: 1rem;
+    font-weight: 400;
+
+    @media (max-width: 767px) {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.footerCard {
+  background-color: var(--cardbg);
+  padding: 2.5rem 0;
+
+  @media (max-width: 767px) {
+    padding: 2.5rem 0;
+  }
+
+  &_footerLink {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    a {
+      color: var(--textclr);
+      font-size: 1rem;
+      font-weight: 400;
+
+      @media (max-width: 767px) {
+        font-size: 0.875rem;
+      }
+
+      &:hover {
+        color: var(--primaryclr);
+      }
+    }
+  }
+
+  .common_btn {
+    min-width: 12.5rem;
+
+    @media (max-width: 991px) {
+      min-width: 10rem;
+    }
+  }
+}

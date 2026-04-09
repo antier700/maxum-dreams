@@ -1,0 +1,44 @@
+@use '../../../../assets/theme/_var.scss' as *;
+
+.OtpIputs {
+
+  label,
+  .form-label {
+    display: block;
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.8rem;
+
+    span,
+    sup {
+      color: var(--red);
+    }
+  }
+
+  input {
+    border-radius: .75rem;
+    border: 1px solid var(--borderlight);
+    width: 16.666% !important;
+    margin: 0 .25rem 0;
+    height: 3.125rem;
+    background: transparent;
+    color: var(--white);
+
+    &::placeholder {
+      color: var(--textclr);
+    }
+
+    @media (max-width: 575px) {
+      height: 4rem;
+    }
+
+    &:focus {
+      border-color: var(--textclr);
+      box-shadow: none;
+      outline: none;
+      color: var(--textclr);
+    }
+  }
+}

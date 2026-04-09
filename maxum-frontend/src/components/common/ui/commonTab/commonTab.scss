@@ -1,0 +1,112 @@
+@use '../../../assets/theme/_var.scss' as *;
+
+.tab-nav-wrapper {
+    border-bottom: 1px solid var(--borderclr);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 1060px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .right_section {
+        @media (max-width: 1060px) {
+            align-self: end;
+            padding: 0.5rem 0;
+        }
+    }
+}
+
+.common-tabs-wrapper {
+    .custom-tabs {
+        display: flex;
+        border: 0;
+        flex-wrap: nowrap;
+        border-bottom: none !important;
+        overflow-x: auto;
+        width: 100%;
+        overflow-y: hidden;
+        transition: 0.3s ease, color 0.3s ease;
+
+        @media (max-width: 1060px) {
+            border-bottom: 1px solid var(--borderclr);
+        }
+
+        &::-webkit-scrollbar {
+            height: .125rem;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--secondryclr);
+            border-radius: 0.625rem;
+        }
+
+        .nav-item {
+            flex-shrink: 0;
+
+            .nav-link {
+                padding: 0 0.75rem;
+                line-height: 2.125rem;
+                color: var(--textclr);
+                border: 0;
+                white-space: nowrap;
+                border-radius: 0;
+                border-bottom: 2px solid transparent;
+                font-size: 1rem;
+                transition: border-color 0.3s ease, color 0.3s ease;
+
+                &.active {
+                    border-bottom-color: rgb(80, 210, 193);
+                    background: none;
+                    color: var(--white);
+                }
+
+                &:hover {
+                    color: var(--white);
+                }
+            }
+        }
+
+        .nav-tabs {
+            border-bottom: 1px solid #1f2937;
+            background-color: #111827;
+            padding: 0.3125rem 0.625rem;
+
+            .nav-item {
+                margin-bottom: -1px;
+
+                .nav-link {
+                    color: #cbd5e1;
+                    border: none;
+                    border-bottom: 2px solid transparent;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        color: #ffffff;
+                        background-color: transparent;
+                        border-color: #339af0;
+                    }
+
+                    &.active {
+                        color: #ffffff;
+                        border-color: #0d6efd;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            background-color: #111827;
+            color: #cbd5e1;
+            padding: 0.625rem;
+            border-top: none;
+        }
+    }
+}

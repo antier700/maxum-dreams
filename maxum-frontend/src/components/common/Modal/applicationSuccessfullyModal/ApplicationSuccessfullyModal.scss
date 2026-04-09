@@ -1,0 +1,65 @@
+@use "../../../../assets/theme/_var.scss" as *;
+
+.common_applicationSuccessfullyModal {
+    .commonContentModal {
+        padding-top: 1rem;
+
+        p {
+            color: var(--textclr);
+        }
+
+        .applications-details {
+            padding: 1.75rem;
+            border-radius: 0.75rem;
+            background: var(--cardbg);
+            @extend %transition;
+            margin-top: 2rem;
+
+            @media (max-width: 1279px) {
+                padding: 1.5rem;
+            }
+
+            @media (max-width: 767px) {
+                padding: 1.25rem 1rem;
+            }
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid var(--borderclr);
+                padding-bottom: 1rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                    border-bottom: none;
+                    padding-bottom: 0;
+                }
+
+                p {
+                    color: var(--textclr);
+                    min-width: 5rem;
+
+                    @media (max-width: 575px) {
+                        font-size: 0.875rem;
+                    }
+                }
+
+                .copy-icon {
+                    display: flex;
+                    min-width: 1.125rem;
+                }
+
+                span {
+                    color: var(--clr1E2836);
+                    font-weight: 600;
+
+                    @media (max-width: 575px) {
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+    }
+}

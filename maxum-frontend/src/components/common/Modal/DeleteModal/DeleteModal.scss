@@ -1,0 +1,12 @@
+@use "../../../../assets/theme/_var.scss" as *;
+
+.common_deleteModal {
+    &_content {
+        padding-block: .875rem;
+
+        p {
+            color: var(--textclr);
+            margin: 1rem 0 2rem;
+        }
+    }
+}

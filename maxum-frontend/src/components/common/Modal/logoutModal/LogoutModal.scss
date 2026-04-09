@@ -1,0 +1,23 @@
+@use "../../../../assets/theme/_var.scss" as *;
+
+.common_logoutModal {
+    &_content {
+        padding-block: .875rem;
+
+        p {
+            color: var(--textclr);
+            margin: 1rem 0 2rem;
+        }
+
+        .circle-border {
+            svg {
+                width: 1.875rem;
+                height: 2.125rem;
+                
+                path {
+                    fill: var(--pinkBorder);
+                }
+            }
+        }
+    }
+}

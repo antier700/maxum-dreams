@@ -1,0 +1,90 @@
+@use "../../../../assets/theme/_var.scss" as *;
+
+.custompagination {
+    padding: .625rem;
+
+    &_left {
+        p {
+            color: var(--textclr);
+            font-size: .75rem;
+            margin: 0;
+        }
+    }
+
+    .pagination {
+        justify-content: flex-end;
+
+        .lineclr {
+            color: var(--primaryclr);
+        }
+
+        li {
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+
+            .page-link {
+                background: none;
+                border: 0;
+                color: var(--textclr);
+                font-size: 1rem;
+                font-weight: normal;
+                line-height: normal;
+                letter-spacing: 0.6px;
+                width: 1.875rem;
+                height: 1.875rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                &:focus {
+                    box-shadow: none;
+                }
+
+                &:hover {
+                    color: var(--white);
+                }
+            }
+
+            &.active {
+                .page-link {
+                    color: var(--white);
+                }
+            }
+        }
+
+        li {
+
+            &.prevArrow,
+            &.nextArrow {
+                a {
+                    padding: 0;
+                }
+            }
+        }
+
+        li {
+            &.prevArrow {
+                margin-right: .625rem;
+            }
+
+            &.nextArrow {
+                margin-left: 0rem;
+            }
+        }
+
+    }
+
+    @media (max-width:991px) {
+
+        &_left {
+            text-align: center;
+        }
+
+        .pagination {
+            justify-content: center;
+        }
+
+    }
+}

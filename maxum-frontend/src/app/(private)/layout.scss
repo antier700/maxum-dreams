@@ -1,0 +1,13 @@
+@use "../../assets/theme/_var.scss" as *;
+
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--pagebg);
+}
+
+.mainContent {
+  flex: 1;
+  padding: var(--space-xl) 0;
+}

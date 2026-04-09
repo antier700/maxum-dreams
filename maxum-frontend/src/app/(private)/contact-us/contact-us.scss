@@ -1,0 +1,86 @@
+@use "../../../assets/theme/_var.scss" as *;
+
+.investor-contact {
+  &__left {
+    position: relative;
+    z-index: 1;
+    padding-left: 10rem;
+
+    &::after {
+      content: "";
+      background-color: var(--primaryclr);
+      position: absolute;
+      width: 50%;
+      height: 80%;
+      top: 30%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      filter: blur(100px);
+      border-radius: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    &::before {
+      content: "";
+      background-color: #074454;
+      position: absolute;
+      width: 50%;
+      height: 80%;
+      top: 30%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      filter: blur(100px);
+      border-radius: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.3;
+    }
+  }
+  &__heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: var(--textmuted);
+  }
+
+  &__newsletter-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.625rem;
+  }
+
+  &__newsletter-desc {
+    font-size: 0.875rem;
+    color: var(--white);
+    margin: 0;
+  }
+
+  &__card {
+    background: var(--cardbg);
+    border: 1px solid var(--borderclr);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  &__card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: var(--space-lg);
+  }
+
+  &__form .input_group {
+    margin-bottom: 0;
+  }
+
+  &__submit {
+    margin-top: var(--space-sm);
+  }
+}

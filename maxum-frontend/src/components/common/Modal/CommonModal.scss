@@ -1,0 +1,148 @@
+@use "../../../assets/theme/_var.scss" as *;
+
+.commonModal {
+  &.modal {
+    &.overhideModal {
+      z-index: 9992;
+    }
+
+    .modal-dialog {
+      max-width: 35rem;
+    }
+
+    &.large .modal-dialog {
+      max-width: 50rem;
+    }
+
+    .modal-content {
+      background: var(--modalbg);
+      border: 1px solid var(--modalBorder);
+      border-radius: 1.25rem;
+      position: relative;
+      backdrop-filter: blur(60px);
+      margin: 0 auto;
+      z-index: 2;
+      padding: 2.25rem;
+      width: 100%;
+
+      @media (max-width: 767px) {
+        padding: 1.25rem 1rem 1.5rem;
+      }
+
+      .modal-header {
+        border: 0;
+        padding: 0;
+        max-width: 90%;
+
+        .modal-title {
+          margin-bottom: 1.875rem;
+
+          h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: normal;
+            color: var(--white);
+            display: flex;
+            flex-wrap: wrap;
+
+            @media (max-width: 575px) {
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+
+      .modal_close_btn,
+      .btn-close {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        position: absolute;
+        right: 1.25rem;
+        top: 1rem;
+        @extend %transition;
+
+        &:hover {
+          svg {
+            path {
+              fill: var(--primaryclr);
+            }
+          }
+        }
+      }
+
+      .modal-body {
+        padding: 0;
+      }
+
+      .btn-style {
+        min-width: 19rem;
+
+        @media (max-width: 767px) {
+          min-width: 15rem;
+        }
+
+        @media (max-width: 575px) {
+          min-width: 12rem;
+        }
+      }
+    }
+
+    .backbtn {
+      font-size: 1rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      cursor: pointer;
+      @extend %transition;
+
+      svg {
+        display: block;
+
+        path {
+          @extend %transition;
+        }
+      }
+
+      &:hover {
+        color: var(--primaryclr);
+        gap: 0.7rem;
+
+        svg {
+          path {
+            stroke: var(--primaryclr);
+          }
+        }
+      }
+    }
+  }
+
+  &.modalSize110 {
+    .modal-dialog {
+      max-width: 110rem;
+    }
+  }
+}
+
+.modal-backdrop {
+  &.transaction_modal_bckdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    opacity: 1;
+
+    &_otp,
+    &.overhideModal {
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 9991;
+    }
+  }
+}
+
+body .offcanvas-backdrop {
+  &.fade {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 1;
+  }
+}

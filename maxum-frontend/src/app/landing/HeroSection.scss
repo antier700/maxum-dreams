@@ -1,0 +1,348 @@
+@use "../../assets/theme/_var.scss" as *;
+
+.heroSection {
+  padding: 8rem 0 6rem;
+  background-color: var(--cardbg); // Different background color to stand out
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 991px) {
+    padding: 6rem 0 4rem;
+  }
+
+  @media (max-width: 767px) {
+    padding: 5rem 0 3rem;
+  }
+
+  /* Abstract glow effect */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(
+      circle,
+      var(--primaryclr-alpha-10) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .heroRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 4rem;
+    }
+  }
+
+  .heroContent {
+    flex: 1;
+    max-width: 600px;
+    z-index: 2;
+    
+    @media (max-width: 991px) {
+      max-width: 100%;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      background-color: var(--primaryclr-alpha-10);
+      color: var(--primaryclr);
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--primaryclr-alpha-20);
+    }
+
+    .title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--textmain);
+      margin-bottom: 1.5rem;
+
+      .highlight {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @media (max-width: 1199px) {
+        font-size: 3.5rem;
+      }
+
+      @media (max-width: 991px) {
+        font-size: 3rem;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 2.25rem;
+      }
+    }
+
+    .description {
+      font-size: 1.25rem;
+      color: var(--textclr);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+
+      @media (max-width: 767px) {
+        font-size: 1.125rem;
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 1rem;
+
+      @media (max-width: 991px) {
+        justify-content: center;
+      }
+
+      @media (max-width: 575px) {
+        flex-direction: column;
+      }
+
+      .primaryBtn {
+        background: var(--gradient);
+        color: var(--black);
+        padding: 1rem 2.5rem;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: 1.125rem;
+        transition: var(--transition);
+        border: none;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px var(--primaryclr-alpha-20);
+        }
+      }
+
+      .secondaryBtn {
+        background-color: transparent;
+        color: var(--textmain);
+        padding: 1rem 2.5rem;
+        border-radius: var(--radius-full);
+        font-weight: 600;
+        font-size: 1.125rem;
+        transition: var(--transition);
+        border: 2px solid var(--borderclr);
+
+        &:hover {
+          border-color: var(--primaryclr);
+          color: var(--primaryclr);
+          background-color: var(--surfacebg);
+        }
+      }
+    }
+  }
+
+  .heroIllustration {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 480px;
+    z-index: 2;
+    
+    @media (max-width: 991px) {
+      width: 100%;
+      max-width: 500px;
+      min-height: 400px;
+    }
+
+    .illustrationWrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Animated Circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--borderclr);
+      animation: floatSlow 6s ease-in-out infinite;
+
+      &.circle-1 {
+        width: 250px;
+        height: 250px;
+        border-color: var(--primaryclr-alpha-20);
+        background: radial-gradient(circle, var(--primaryclr-alpha-10) 0%, transparent 60%);
+        animation-delay: 0s;
+      }
+      &.circle-2 {
+        width: 350px;
+        height: 350px;
+        border-color: rgba(255, 255, 255, 0.05);
+        animation-duration: 8s;
+        animation-delay: -2s;
+      }
+      &.circle-3 {
+        width: 450px;
+        height: 450px;
+        border-color: rgba(255, 255, 255, 0.02);
+        animation-duration: 10s;
+        animation-delay: -4s;
+      }
+    }
+
+    /* Floating Glass Card */
+    .glassCard {
+      position: relative;
+      z-index: 3;
+      width: 320px;
+      height: 220px;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+      animation: floatMain 5s ease-in-out infinite alternate;
+
+      .glassHeader {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+
+        .circleIcon {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          
+          &.icon-red { background-color: var(--red); }
+          &.icon-yellow { background-color: var(--yellowclr); }
+          &.icon-green { background-color: var(--greenclr); }
+        }
+      }
+
+      .line {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        width: 100%;
+
+        &.short {
+          width: 50%;
+        }
+      }
+
+      .chart {
+        margin-top: 2rem;
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+        height: 90px;
+
+        .bar {
+          flex: 1;
+          border-radius: 4px 4px 0 0;
+          animation: growBar 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          transform-origin: bottom;
+          box-shadow: 0 0 10px var(--primaryclr-alpha-20);
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, transparent, rgba(255,255,255,0.2));
+            border-radius: 4px 4px 0 0;
+          }
+
+          &.bar-1 { height: 40%; background: var(--primaryclr-dark); animation-delay: 0.1s; }
+          &.bar-2 { height: 60%; background: var(--primaryclr-dark); animation-delay: 0.2s; }
+          &.bar-3 { height: 35%; background: var(--primaryclr-dark); animation-delay: 0.3s; }
+          &.bar-4 { height: 80%; background: var(--primaryclr); animation-delay: 0.4s; }
+          &.bar-5 { height: 100%; background: var(--primaryclr-light); animation-delay: 0.5s; }
+        }
+      }
+
+      /* 3D floating badge detail */
+      .floatingBadge {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background: var(--greenclr);
+        color: var(--white);
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-full);
+        font-weight: 700;
+        font-size: 0.875rem;
+        box-shadow: 0 10px 15px -3px rgba(76, 175, 80, 0.4);
+        animation: floatBadge 4s ease-in-out infinite alternate-reverse;
+        border: 2px solid rgba(255,255,255,0.2);
+      }
+    }
+  }
+}
+
+/* Keyframes */
+@keyframes floatMain {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+}
+
+@keyframes floatBadge {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes growBar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

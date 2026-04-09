@@ -1,0 +1,84 @@
+@use "../../../../assets/theme/_var.scss" as *;
+.custominput_dropdown {
+  .dropdown {
+    &-toggle {
+      background-color: transparent;
+      border-radius: 0;
+      color: var(--checkBoxLabel);
+      font-size: 1rem;
+      font-weight: normal;
+      padding: 0;
+      border: 0;
+      min-width: inherit;
+      height: auto;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      width: auto;
+      cursor: pointer;
+      div {
+        white-space: nowrap;
+        padding-right: .5rem;
+      }
+      svg {
+        height: 0.875rem;
+        width: 0.875rem;
+        min-width: 0.875rem;
+        path {
+          stroke: var(--textclr);
+        }
+      }
+      &:after {
+        content: none;
+      }
+      &:focus,
+      &:hover,
+      &:active {
+        color: var(--checkBoxLabel);
+        background-color: transparent;
+      }
+      &.show {
+        background-color: transparent;
+      }
+      &.active {
+        color: var(--white);
+        svg {
+          path {
+            stroke: var(--white);
+          }
+        }
+      }
+      &.is-invalid {
+        border-color: var(--red);
+      }
+    }
+    &-menu {
+      width: auto;
+      max-width: 100%;
+      background-color: var(--primaryclr);
+      border: .1rem solid var(--borderclr);
+      min-width: min-content;
+      box-shadow: 0px .25rem .75rem 0px color-mix(in srgb, var(--black) 12%, transparent);
+      border-radius: 0.625rem;
+      padding: .25rem .5rem;
+      margin-top: .4375rem;
+    }
+    &-item {
+      color: var(--textclr);
+      background-color: transparent;
+      font-size: 1rem;
+      padding: .1875rem 0;
+      white-space: nowrap;
+      max-width: 100%;
+      &.active,
+      &:focus {
+        background-color: transparent;
+        color: var(--checkBoxLabel);
+      }
+      &:hover {
+        color:var(--checkBoxLabel);
+      }
+    }
+  }
+}

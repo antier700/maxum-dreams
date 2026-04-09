@@ -1,0 +1,70 @@
+@use "../../../assets/theme/_var.scss" as *;
+
+.tooltip {
+    position: absolute !important;
+
+    * {
+        word-break: break-word;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+
+    &-inner {
+        border: 1px solid rgba(102, 102, 102, 0.00);
+        background: var(--dropdownbg);
+        padding: 0.625rem;
+        font-size: 0.75rem;
+        font-weight: normal;
+        width: 100%;
+        max-width: 17.125rem;
+        border-radius: .625rem;
+        z-index: 9;
+        position: relative;
+        color: var(--white);
+        text-align: left;
+        box-shadow: 0 0 0.625rem color-mix(in srgb, var(--white) 2%, transparent);
+
+    }
+
+    &-arrow {
+        &::before {
+            border-width: .4375rem !important;
+        }
+    }
+
+    &.bs-tooltip {
+        &-start {
+            .tooltip-arrow {
+                &:before {
+                    border-left-color: var(--dropdownbg);
+                }
+            }
+        }
+
+        &-end {
+            .tooltip-arrow {
+                &:before {
+                    border-right-color: var(--dropdownbg);
+                }
+            }
+        }
+
+        &-top {
+            .tooltip-arrow {
+                &:before {
+                    border-top-color: var(--dropdownbg);
+                }
+            }
+        }
+
+        &-bottom {
+            .tooltip-arrow {
+                &:before {
+                    border-bottom-color: var(--dropdownbg);
+                }
+            }
+        }
+    }
+}

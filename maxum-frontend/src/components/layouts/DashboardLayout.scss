@@ -1,0 +1,30 @@
+@use "../../assets/theme/_var.scss" as *;
+
+.dashboard-layout {
+  min-height: 100vh;
+  background: var(--cardbg);
+
+  &__main {
+    margin-left: 280px;
+    min-height: 100vh;
+    transition: margin-left var(--transition);
+
+    @media (max-width: 991px) {
+      margin-left: 0;
+    }
+  }
+
+  &__content {
+    padding: calc(80px + var(--space-xl)) var(--space-xl) var(--space-xl);
+    min-height: calc(100vh - 80px);
+
+    @media (max-width: 768px) {
+      padding: calc(80px + var(--space-lg)) var(--space-md) var(--space-md);
+    }
+  }
+}
+
+// Adjust when sidebar is collapsed
+.app-sidebar.collapsed ~ .dashboard-layout__main {
+  margin-left: 80px;
+}

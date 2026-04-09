@@ -1,0 +1,167 @@
+@use "../../assets/theme/_var.scss" as *;
+
+.legal-page {
+  min-height: 100vh;
+  background: var(--white);
+  padding: var(--space-2xl) var(--space-md);
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 2px solid var(--borderclr);
+  }
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--textdark);
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.02em;
+  }
+
+  &__updated {
+    font-size: 1rem;
+    color: var(--textmuted);
+    font-weight: 500;
+  }
+
+  &__content {
+    color: var(--textmain);
+    line-height: 1.8;
+  }
+}
+
+.legal-section {
+  margin-bottom: var(--space-2xl);
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--textdark);
+    margin-bottom: var(--space-md);
+    padding-top: var(--space-md);
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--textdark);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  p {
+    margin-bottom: var(--space-md);
+    color: var(--textmain);
+    font-size: 1.0625rem;
+
+    strong {
+      color: var(--textdark);
+      font-weight: 600;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--space-md);
+
+    li {
+      position: relative;
+      padding-left: var(--space-lg);
+      margin-bottom: var(--space-sm);
+      color: var(--textmain);
+      font-size: 1.0625rem;
+
+      &::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--primaryclr);
+        font-weight: 600;
+      }
+    }
+  }
+
+  ol {
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+
+    li {
+      margin-bottom: var(--space-sm);
+      color: var(--textmain);
+      font-size: 1.0625rem;
+
+      &::marker {
+        color: var(--primaryclr);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.contact-info {
+  background: var(--cardbg);
+  border-left: 4px solid var(--primaryclr);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-md);
+
+  p {
+    margin-bottom: var(--space-sm);
+    color: var(--textmain);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: var(--textdark);
+      min-width: 80px;
+      display: inline-block;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .legal-page {
+    padding: var(--space-xl) var(--space-md);
+
+    &__header {
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-lg);
+    }
+
+    &__title {
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+  }
+
+  .legal-section {
+    margin-bottom: var(--space-xl);
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+    }
+
+    p, ul li, ol li {
+      font-size: 1rem;
+    }
+
+    ul li {
+      padding-left: var(--space-md);
+    }
+  }
+}

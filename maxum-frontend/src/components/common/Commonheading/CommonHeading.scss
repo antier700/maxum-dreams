@@ -1,0 +1,42 @@
+@use "../../../assets/theme/_var.scss" as *;
+
+.common_heading {
+    max-width: 46.875rem;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 3.75rem;
+
+    @media(max-width: 1679px) {
+        margin-bottom: 2.5rem;
+    }
+
+    @media(max-width: 1199px) {
+        margin-bottom: 1.875rem;
+    }
+
+    h2 {
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 1.25rem;
+        line-height: 1.875rem;
+        color: var(--textclr);
+        font-weight: 400;
+        margin-top: 1rem;
+
+        @media(max-width: 1679px) {
+            margin-top: 0.875rem;
+        }
+
+        @media(max-width: 1199px) {
+            font-size: 1.125rem;
+            line-height: 1.625rem;
+        }
+
+        @media(max-width: 767px) {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+}

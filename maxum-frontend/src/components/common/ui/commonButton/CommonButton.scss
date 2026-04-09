@@ -1,0 +1,108 @@
+@use "../../../../assets/theme/_var.scss" as *;
+
+.common_btn {
+  min-height: 3.125rem;
+  border-radius: .625rem;
+  background: var(--gradient);
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: .3125rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  position: relative;
+  outline: none;
+  overflow: hidden;
+  min-width: 9rem;
+  transition: var(--transition);
+  border: 0;
+
+  &:hover {
+    background: var(--gradientHover);
+  }
+
+  @media (max-width: 767px) {
+    min-height: 2.75rem;
+    font-size: .875rem;
+    border-radius: 0.5rem;
+  }
+
+  @media (max-width: 359px) {
+    padding: .3125rem 0.625rem;
+  }
+
+  &_icon {
+    margin-right: .5rem;
+
+    svg,
+    img {
+      max-width: 2.25rem;
+
+      @media (max-width:991px) {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+
+  &.full {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &.border-btn {
+    background: var(--pinkclr);
+    color: var(--primaryclr);
+    border: 2px solid var(--pinkBorder);
+
+    &:hover {
+      background: var(--primaryclr);
+      color: var(--on-primary);
+      border-color: var(--primaryclr);
+
+      .common_btn_icon {
+        svg {
+          path {
+            fill: var(--on-primary);
+          }
+        }
+      }
+    }
+  }
+
+  &.white-btn {
+    background: var(--white);
+    color: var(--greyclr);
+    border: 2px solid var(--white);
+
+    &:hover {
+      background: var(--primaryclr);
+      color: var(--on-primary);
+      border-color: var(--primaryclr);
+
+      .common_btn_icon {
+        svg {
+          path {
+            fill: var(--on-primary);
+          }
+        }
+      }
+    }
+  }
+
+  &_icon {
+    svg {
+      path {
+        @extend %transition;
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: .5;
+  }
+}

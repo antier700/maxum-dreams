@@ -1,0 +1,253 @@
+@use "../../../assets/theme/_var.scss" as *;
+
+.auth-page {
+  min-height: 100vh;
+  background: var(--pagebg);
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/images/login_bg.png ");
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: var(--primaryclr-dark);
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: -15%;
+    filter: blur(250px);
+    border-radius: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+
+    @media (max-width: 991px) {
+      right: -0%;
+      width: 100%;
+    }
+  }
+
+  .container-fluid.p-0 {
+    max-width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .min-vh-100.row {
+    flex: 1;
+    min-height: 100vh;
+  }
+
+  &__brand {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-lg);
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      background-color: var(--primaryclr);
+      position: absolute;
+      width: 70%;
+      height: 80%;
+      top: 50%;
+      left: 35%;
+      transform: translate(-50%, -50%);
+      filter: blur(100px);
+      border-radius: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    &::before {
+      content: "";
+      background-color: #074454;
+      position: absolute;
+      width: 70%;
+      height: 80%;
+      top: 50%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+      filter: blur(100px);
+      border-radius: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    &-content {
+      position: relative;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    &-graphic {
+      width: 100%;
+      margin: 4rem auto;
+    }
+
+    p {
+      font-size: 2rem;
+      color: var(--white);
+      margin: 0 auto;
+      max-width: 400px;
+    }
+  }
+
+  &__form-wrapper {
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xl) var(--space-md);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23333' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    @media (max-width: 991px) {
+      flex: 1;
+      max-width: 100%;
+    }
+  }
+
+  &__form-container {
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__form-header {
+    margin-bottom: var(--space-xl);
+    text-align: left;
+  }
+
+  &__form-title {
+    font-size: clamp(1.75rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--textdark);
+    margin-bottom: 0.25rem;
+  }
+
+  &__form-subtitle {
+    font-size: 0.9375rem;
+    color: var(--textmuted);
+    margin: 0;
+  }
+}
+
+/* Back button for inner onboarding screens */
+.auth-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primaryclr);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--secondryclr-light);
+    text-decoration: none;
+  }
+}
+
+.auth-form {
+  &__options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  &__link {
+    color: var(--primaryclr);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9375rem;
+
+    &:hover {
+      color: var(--secondryclr-light);
+      text-decoration: underline;
+    }
+  }
+  &__footer {
+    text-align: center;
+    padding-top: var(--space-md);
+
+    p {
+      margin: 0;
+      color: var(--textmuted);
+      font-size: 0.9375rem;
+    }
+  }
+
+  &__submit {
+    margin-top: var(--space-sm);
+  }
+}
+
+/* ── OTP Row (verify-code page) ── */
+.auth-otp-row {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.auth-otp-cell {
+  width: 48px;
+  height: 52px;
+  border: 1.5px solid var(--borderlight);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  transition: border-color var(--transition-fast);
+  caret-color: var(--primaryclr);
+
+  &:focus {
+    border-color: var(--primaryclr);
+    box-shadow: 0 0 0 3px var(--primaryclr-alpha-10);
+  }
+
+  &.filled {
+    border-color: var(--primaryclr);
+  }
+}
