@@ -11,6 +11,9 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "@progress/kendo-react-common": "^14.3.2",
+    "@progress/kendo-react-dateinputs": "^14.3.2",
+    "@progress/kendo-react-intl": "^14.3.2",
     "@reduxjs/toolkit": "^2.11.2",
     "axios": "^1.13.5",
     "bootstrap": "^5.3.8",
