@@ -15,15 +15,30 @@ const PORT = process.env.PORT || 5000;
 // ======================
 // Connect Database
 // ======================
-connectDB(); 
+connectDB();
 
 // ======================
 // Middleware (✅ FIXED)
 // ======================
+const allowedOrigins = [
+  "https://maxum-dreams.vercel.app",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  process.env.CLIENT_URL,
+].filter(Boolean);
+
 app.use(cors({
-  origin: ["https://maxum-dreams.vercel.app"], // 👈 apna frontend URL
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS policy blocked origin: ${origin}`));
+    }
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true
+  credentials: true,
 }));
 
 // ✅ IMPORTANT (preflight fix)

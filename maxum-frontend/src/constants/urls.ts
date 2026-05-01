@@ -11,43 +11,43 @@ const withPrefix = (path: string) => {
 };
 
 export const AUTH_URLS = {
-  REGISTER: withPrefix("/auth/register"),
-  LOGIN: withPrefix("/auth/login"),
-  VERIFY_LOGIN_OTP: withPrefix("/auth/verify-login-otp"),
-  RESEND_LOGIN_OTP: withPrefix("/auth/resend-login-otp"),
-  FORGOT_PASSWORD: withPrefix("/auth/forgot-password"),
-  RESET_PASSWORD: withPrefix("/auth/reset-password"),
-  VERIFY_CODE: withPrefix("/auth/verify-code"),
-  VERIFY_OTP: withPrefix("/auth/verify-otp"),
-  VERIFY_EMAIL: withPrefix("/auth/verify-email"),
-  RESEND_VERIFICATION_EMAIL: withPrefix("/auth/resend-verification-email"),
-  CHANGE_PASSWORD: withPrefix("/auth/change-password"),
-  LOGOUT: withPrefix("/auth/logout"),
+  REGISTER: withPrefix("/api/auth/register"),
+  LOGIN: withPrefix("/api/auth/login"),
+  VERIFY_LOGIN_OTP: withPrefix("/api/auth/verify-login-otp"),
+  RESEND_LOGIN_OTP: withPrefix("/api/auth/resend-login-otp"),
+  FORGOT_PASSWORD: withPrefix("/api/auth/forgot-password"),
+  RESET_PASSWORD: withPrefix("/api/auth/reset-password"),
+  VERIFY_CODE: withPrefix("/api/auth/verify-code"),
+  VERIFY_OTP: withPrefix("/api/auth/verify-otp"),
+  VERIFY_EMAIL: withPrefix("/api/auth/verify-email"),
+  RESEND_VERIFICATION_EMAIL: withPrefix("/api/auth/resend-verification-email"),
+  CHANGE_PASSWORD: withPrefix("/api/auth/change-password"),
+  LOGOUT: withPrefix("/api/auth/logout"),
 };
 
 export const USER_URLS = {
-  PROFILE: withPrefix("/user/profile"),
-  UPDATE: withPrefix("/user/update"),
+  PROFILE: withPrefix("/api/user/profile"),
+  UPDATE: withPrefix("/api/user/update"),
 };
 
 export const DASHBOARD_URLS = {
-  STATS: withPrefix("/dashboard/stats"),
+  STATS: withPrefix("/api/dashboard/stats"),
 };
 
 export const PLANS_URLS = {
-  LIST: withPrefix("/plans"),
+  LIST: withPrefix("/api/plans"),
 };
 
 export const TRANSACTION_URLS = {
-  HISTORY: withPrefix("/user/transactions"),
-  STAKES: withPrefix("/user/stakes"),
-  REFERRALS_REWARDS: withPrefix("/user/referrals/rewards"),
-  MOCK_DEPOSIT: withPrefix("/user/mock-deposit"),
-  WITHDRAW: withPrefix("/user/withdraw"),
-  STAKE: withPrefix("/user/stake"),
-  UNSTAKE: withPrefix("/user/unstake"),
+  HISTORY: withPrefix("/api/user/transactions"),
+  STAKES: withPrefix("/api/user/stakes"),
+  REFERRALS_REWARDS: withPrefix("/api/user/referrals/rewards"),
+  MOCK_DEPOSIT: withPrefix("/api/user/mock-deposit"),
+  WITHDRAW: withPrefix("/api/user/withdraw"),
+  STAKE: withPrefix("/api/user/stake"),
+  UNSTAKE: withPrefix("/api/user/unstake"),
 };
 
 export const CONTACT_URLS = {
-  SUBMIT: withPrefix("/contact"),
+  SUBMIT: withPrefix("/api/contact"),
 };
