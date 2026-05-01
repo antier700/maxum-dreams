@@ -18,12 +18,18 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // ======================
-// Middleware
+// Middleware (✅ FIXED)
 // ======================
-app.use(cors());
-// Raise the JSON body limit to 10 MB so that base64-encoded profile
-// pictures (which can be ~185 KB after encoding) are not rejected with
-// PayloadTooLargeError.
+app.use(cors({
+  origin: ["https://maxum-dreams.vercel.app"], // 👈 apna frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true
+}));
+
+// ✅ IMPORTANT (preflight fix)
+app.options("*", cors());
+
+// Body parser
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
